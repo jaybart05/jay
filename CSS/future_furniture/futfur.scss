@@ -1,0 +1,319 @@
+@import '/CSS/animations/animation.css';
+@import '/CSS/portfolio/portfolio.css';
+
+.J_Logo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 70px;
+  filter: drop-shadow(0 2px 4px #0e0e0e4a);
+  margin: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 500px auto auto auto auto;
+  grid-template-areas:
+    "item1 item1 item1 item2 item2"
+    "item1 item1 item1 item2 item2"
+    "item3 item3 item4 item4 item4"
+    "item3 item3 item4 item4 item4"
+  ;
+
+  .item1 {
+    grid-area: item1;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    padding: 10px;
+    animation: slide-left 2s ease both;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+
+    img {
+      width: 95%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px #1e710066;
+    }
+  }
+
+  .item2 {
+    grid-area: item2;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 50px 30px;
+    animation: fadeInDown 2s ease both;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+
+    .content {
+      h1 {
+        font-weight: 700;
+        font-size: 68px;
+        line-height: 159%;
+        color: #1e7100;
+        text-shadow: 0 2px 5px #0e0e0e4a;
+      }
+
+      p {
+        font-size: large;
+      }
+
+      .tech-stack {
+        margin-top: 40px;
+
+        h3 {
+          font-size: 25px;
+        }
+
+        .tech-icon {
+          margin-top: 5px;
+          margin-left: 30px;
+
+          img {
+            width: 100px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            margin: 5px;
+            filter: drop-shadow(0 2px 4px #0e0e0e4a);
+          }
+        }
+      }
+    }
+  }
+
+  .item3 {
+    grid-area: item3;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    animation: fadeInUp 2s ease both;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+
+    video {
+      width: 95%;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px #1e710064;
+    }
+  }
+
+  .item4 {
+    grid-area: item4;
+    animation: slide-right 2s ease both;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+    padding: 30px 0px;
+
+    h1 {
+      font-size: 100px;
+      font-weight: 1000;
+      text-shadow: 0 2px 4px #0000007c;
+    }
+
+    h3 {
+      font-size: 50px;
+      font-weight: 400;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.345);
+      background: var(--primary-color);
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1224px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "item1 item1 item1 item1"
+      "item2 item2 item2 item2"
+      "item3 item3 item3 item3"
+      "item4 item4 item4 item4"
+    ;
+
+    .item1 {
+      padding-top: 60px;
+      padding-left: 60px;
+      padding-right: 60px;
+      animation: fadeInUp 2s ease both;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .item2 {
+      align-items: start;
+      justify-content: center;
+      padding: 50px 30px;
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.4s;
+
+      .content {
+        text-align: center;
+
+        .tech-stack {
+          margin-top: 40px;
+
+          .tech-icon {
+
+            img {
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+
+    .item3 {
+      padding-left: 60px;
+      padding-right: 60px;
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.6s;
+
+      video {
+        width: 100%;
+      }
+    }
+
+    .item4 {
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.8s;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 50px;
+
+      h1 {
+        font-size: 70px;
+      }
+
+      h3 {
+        font-size: 35px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "item1 item1"
+      "item4 item4"
+      "item3 item3"
+      "item2 item2"
+    ;
+
+    .item1 {
+      padding-left: 20px;
+      padding-right: 20px;
+      animation: fadeInUp 2s ease both;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .item2 {
+      align-items: start;
+      justify-content: center;
+      padding: 0px 30px;
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.4s;
+
+      .content {
+        text-align: center;
+
+        h1 {
+          font-size: 40px;
+           line-height: 50px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .tech-stack {
+          margin-top: 20px;
+
+          .tech-icon {
+
+            img {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+
+    .item3 {
+      padding-left: 20px;
+      padding-right: 20px;
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.6s;
+    }
+
+    .item4 {
+      animation: fadeInUp 2s ease both;
+      animation-delay: 0.8s;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 0px;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

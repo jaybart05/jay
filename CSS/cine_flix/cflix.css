@@ -1,0 +1,8 @@
+@import '/CSS/portfolio/portfolio.css';
+@import '/CSS/future_furniture/futfur.css';
+.container .item2 .content h1 {
+  color: #000;
+}
+.container .item2 .content h1 span {
+  color: #002FFF;
+}/*# sourceMappingURL=cflix.css.map */
